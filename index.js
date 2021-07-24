@@ -3,8 +3,10 @@ class Map {
     this.target = 0;
     this.ary = [];
     this.deep = 0;
-    for (let i = 0; i < 4; i++) {
-      this.ary.push(new NumberObj(i, ary[i], this));
+    if (ary != null) {
+      for (let i = 0; i < ary.length; i++) {
+        this.ary.push(new NumberObj(i, ary[i], this));
+      }
     }
   }
 
@@ -126,7 +128,7 @@ function SolveButton() {
     }
   });
 
-  if (minSol.length === 0 || !minSol) {
+  if (minSol == null || minSol.length === 0) {
     document.querySelector("#solution-footer").innerText =
       "솔루션이 없거나 이미 풀어진 패턴이에요...";
   } else {
